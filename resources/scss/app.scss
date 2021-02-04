@@ -1,0 +1,48 @@
+@import "./variable";
+
+body {
+  font-family: "lato", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: $dark;
+}
+.cstm_container {
+  max-width: 1140px;
+}
+
+nav ul li:last-child a {
+  background: $primary;
+  &:hover {
+    background: $primary-hover;
+  }
+}
+nav ul li a {
+  transition: $smooth;
+  &:hover {
+    color: $primary;
+  }
+}
+
+section.hero {
+  background: $secondary;
+}
+
+.size {
+  background: $gray;
+}
+
+.pizza_card{
+  background:$secondary;
+}
+.add_to_cart {
+  border: 2px solid $primary;
+  color: $primary;
+  transition: $smooth;
+  &:hover {
+    background: $primary;
+    border-color: $pure;
+    color: $pure;
+  }
+}
+footer{
+  background:$secondary;
+}

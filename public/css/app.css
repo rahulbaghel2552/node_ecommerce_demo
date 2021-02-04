@@ -1,0 +1,50 @@
+body {
+  font-family: "lato", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #232323;
+}
+
+.cstm_container {
+  max-width: 1140px;
+}
+
+nav ul li:last-child a {
+  background: #fe5f1e;
+}
+nav ul li:last-child a:hover {
+  background: #b23301;
+}
+
+nav ul li a {
+  transition: all 0.3s ease-in-out;
+}
+nav ul li a:hover {
+  color: #fe5f1e;
+}
+
+section.hero {
+  background: #f8f8f8;
+}
+
+.size {
+  background: #ccc;
+}
+
+.pizza_card {
+  background: #f8f8f8;
+}
+
+.add_to_cart {
+  border: 2px solid #fe5f1e;
+  color: #fe5f1e;
+  transition: all 0.3s ease-in-out;
+}
+.add_to_cart:hover {
+  background: #fe5f1e;
+  border-color: #fff;
+  color: #fff;
+}
+
+footer {
+  background: #f8f8f8;
+}
