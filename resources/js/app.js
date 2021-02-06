@@ -1,4 +1,34 @@
-console.log("hello from laravel mix 1");
-console.log("hello from laravel mix 2 ");
-console.log("hello from laravel mix 3 ");
-console.log("hello from laravel mix 4");
+import axios from "axios";
+import Noty from "noty";
+let addToCart = document.querySelectorAll(".add_to_cart");
+
+let cartCounter = document.querySelector("#cartCounter");
+
+function updateCart(pizza) {
+  axios
+    .post("/updateCart", pizza)
+    .then((res) => {
+      cartCounter.innerText = res.data.totalQty;
+      new Noty({
+        type: "success",
+        timeout: 1000,
+        text: "item added to card",
+        progressBar: false,
+      }).show();
+    })
+    .catch((err) => {
+      new Noty({
+        type: "error",
+        timeout: 1000,
+        text: "something went wrong",
+        progressBar: false,
+      }).show();
+    });
+}
+
+addToCart.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    let pizza = JSON.parse(btn.dataset.pizza);
+    updateCart(pizza);
+  });
+});
