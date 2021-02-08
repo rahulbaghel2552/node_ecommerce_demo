@@ -1,7 +1,6 @@
 import axios from "axios";
 import Noty from "noty";
 let addToCart = document.querySelectorAll(".add_to_cart");
-
 let cartCounter = document.querySelector("#cartCounter");
 
 function updateCart(pizza) {
