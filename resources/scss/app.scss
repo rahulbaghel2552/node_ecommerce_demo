@@ -52,7 +52,8 @@ section.hero {
     background: $primary;
     border-color: $pure;
     color: $pure;
-  }&:focus{
+  }
+  &:focus {
     outline: none;
   }
 }
@@ -95,7 +96,11 @@ footer {
   right: 0;
 }
 
-.noty_theme__mint{
+.noty_theme__mint {
   border-radius: 50px !important;
   padding-left: 8px !important;
+}
+
+a.link {
+  color: $primary;
 }
