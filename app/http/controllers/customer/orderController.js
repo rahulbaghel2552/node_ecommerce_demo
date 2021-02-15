@@ -26,6 +26,9 @@ function orderController() {
         .then(() => {
           req.flash("success", "Order placed successfully");
           delete req.session.cart;
+          // // emit
+          // const eventEmitter = req.app.get("eventEmitter");
+          // eventEmitter.emit("orderPlaced", result);
           return res.redirect("/customers/orders");
         })
         .catch((err) => {
@@ -40,6 +43,15 @@ function orderController() {
       });
       res.header("Cache-Control", "no-store");
       res.render("customers/orders", { orders: orders, moment: moment });
+    },
+
+    async show(req, res) {
+      const order = await Order.findById(req.params.id);
+      // Authorize user
+      if (req.user._id.toString() === order.customerId.toString()) {
+        return res.render("customers/singleOrder", { order: order });
+      }
+      return res.redirect("/");
     },
   };
 }
